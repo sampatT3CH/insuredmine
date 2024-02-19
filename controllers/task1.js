@@ -89,7 +89,6 @@ export const aggregatedPolicy = async (req,res) => {
               $group: {
                 _id: '$userId',
                 totalPolicies: { $sum: 1 },
-                totalPremium: { $sum: '$premiumAmount' } 
               }
             },
             {
@@ -109,7 +108,6 @@ export const aggregatedPolicy = async (req,res) => {
                 userId: '$_id',
                 userName: '$userInfo.firstName',
                 totalPolicies: 1,
-                totalPremium: 1
               }
             }
           ]);
